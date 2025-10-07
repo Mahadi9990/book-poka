@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import Main from "../pages/Main";
 import Banner from "../components/Banner";
-import BookList from "../components/BookList";
-import PagesToRead from "../components/PagesToRead";
+import About from "../pages/About";
+import BooksDetails from "../components/BooksDetails";
 
 export const AllRoute = createBrowserRouter([
   {
@@ -14,11 +14,12 @@ export const AllRoute = createBrowserRouter([
       path:"/",
       Component:Banner
     },{
-      path:"/book-list",
-      Component:BookList
+      path:"/about",
+      Component:About
     },{
-      path:"/page-to-read",
-      Component:PagesToRead
+      path:"/bookDetails/:id",
+      loader:()=>fetch('./booksData.json'),
+      Component:BooksDetails
     }
   ]
   }

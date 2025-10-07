@@ -3,7 +3,6 @@ import AllBooks from './AllBooks'
 
 export default function Banner() {
   const data = useLoaderData()
-  console.log(data)
   return (
     <>
     <div className='flex justify-evenly items-start max-w-[1200px] mx-auto'>
