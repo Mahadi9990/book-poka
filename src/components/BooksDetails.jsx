@@ -14,6 +14,7 @@ export default function BooksDetails() {
         <div className="flex justify-center items-center">
           <button className="btn">Read</button>
           <button className="btn">wish list</button>
+          <h3></h3>
         </div>
       </div>
     </>
