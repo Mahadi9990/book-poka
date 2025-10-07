@@ -10,6 +10,7 @@ export const AllRoute = createBrowserRouter([
     Component: Main,
     children:[{
       index:true,
+      loader:()=>fetch('./booksData.json'),
       path:"/",
       Component:Banner
     },{

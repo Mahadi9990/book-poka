@@ -1,6 +1,9 @@
+import { useLoaderData } from 'react-router'
 import AllBooks from './AllBooks'
 
 export default function Banner() {
+  const data = useLoaderData()
+  console.log(data)
   return (
     <>
     <div className='flex justify-evenly items-start max-w-[1200px] mx-auto'>
@@ -13,7 +16,7 @@ export default function Banner() {
         </div>
     </div>
         <div className="all-books">
-          <AllBooks/>
+          <AllBooks alBooks={data}/>
         </div>
     </>
   )

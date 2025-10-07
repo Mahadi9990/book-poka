@@ -1,18 +1,20 @@
-import { use } from "react"
+// import { use } from "react";
+import { RiStarSLine } from "react-icons/ri";
 
-export default function Book({allBooks}) {
-    const books = use(allBooks)
-    console.log(books)
+export default function Book({ albooks }) {
+  // const books = use(albooks)
+  // console.log(books);
   return (
-    <div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {books.map((item=>
-            <div className="p-3">
-            <img src={item.image} alt="" />
-            <h1>{item.bookName}</h1>
-        </div>
-        ))}
-    </div>
-    </div>
-  )
+    <>
+      {albooks.map((item) => (
+          <div className="p-3 border-2" key={item.bookId}>
+            <div className="h-[60%] w-[30%] mx-auto">
+                <img src={item.image} alt="" className="h-full w-full" />
+            </div>
+            <h1> <RiStarSLine /> {item.bookName}</h1>
+            {item.tags.map((item,index)=><button className="pr-5 btn m-5" key={index}>{item}</button>)}
+          </div>
+      ))}
+    </>
+  );
 }
